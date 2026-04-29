@@ -537,8 +537,9 @@ INDEX_HTML = r"""<!doctype html>
     }
   </style>
 
-  <script defer data-domain="mlb-player-lookup.onrender.com" src="https://plausible.io/js/script.js"></script>
-
+  <script async defer data-website-id="YOUR_ID"
+          src="https://your-umami-instance.com/script.js"></script>
+          
 </head>
 <body>
   <main>
