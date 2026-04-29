@@ -9,10 +9,17 @@ Information returned:
 - primary_position
 - bats
 - throws
+- photo (if required; see below)
 
-To show player headshot, use the `--show-photo` flag. 
-This will open the player's MLB headshot URL in the default browser. 
-Note that this only works when the lookup resolves to exactly one player.
+How to use: 
+- Run `python lookup.py` with one of the following flags: 
+    - `--id <player_id>` to look up by MLBAM player ID
+    - `--name <player_name>` to look up by player name (MLB may return multiple results for similar names)
+
+- `--show-photo`: 
+    To show player headshot, append the `--show-photo` flag after either id or name. 
+    This will open the player's MLB headshot URL in the default browser. 
+    Note that this only works when the lookup resolves to exactly one player.
 
 Example usage:
 - `python lookup.py --name "Shohei Ohtani"`
