@@ -742,8 +742,13 @@ INDEX_HTML = r"""<!doctype html>
 
 
 def main() -> None:
-    server = ThreadingHTTPServer((HOST, PORT), PlayerLookupHandler)
-    print(f"MLB Player Lookup running at http://{HOST}:{PORT}")
+    import os
+
+    host = "0.0.0.0" if "PORT" in os.environ else HOST
+    port = int(os.environ.get("PORT", PORT))
+
+    server = ThreadingHTTPServer((host, port), PlayerLookupHandler)
+    print(f"MLB Player Lookup running at http://{host}:{port}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

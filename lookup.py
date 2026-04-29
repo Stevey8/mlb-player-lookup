@@ -19,7 +19,7 @@ How to use:
 - `--show-photo`: 
     To show player headshot, append the `--show-photo` flag after either id or name. 
     This will open the player's MLB headshot URL in the default browser. 
-    Note that this only works when the lookup resolves to exactly one player.
+Note that this only works when the lookup resolves to exactly one player.
 
 Example usage:
 - `python lookup.py --name "Shohei Ohtani"`
