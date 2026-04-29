@@ -537,9 +537,8 @@ INDEX_HTML = r"""<!doctype html>
     }
   </style>
 
-  <script async defer data-website-id="YOUR_ID"
-          src="https://your-umami-instance.com/script.js"></script>
-          
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="5145afcd-128d-40c5-96ff-cff042ae7242"></script>
+
 </head>
 <body>
   <main>
