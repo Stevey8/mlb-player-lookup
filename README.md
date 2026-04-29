@@ -2,7 +2,7 @@
 
 A small MLB player lookup tool for finding player profiles by name or MLBAM
 ID. The repo includes a quick terminal script `lookup.py` and a lightweight local web
-interface.  
+interface `web.py`.  
   
 No dependency installation is needed for the web interface as it uses Python's
 standard library.
@@ -45,7 +45,7 @@ per-player "Show details" section for the full profile fields.
 Start the local server:
 
 ```bash
-python web_player_lookup.py
+python web.py
 ```
 
 Then open this URL in your browser:
