@@ -536,6 +536,9 @@ INDEX_HTML = r"""<!doctype html>
       }
     }
   </style>
+
+  <script defer data-domain="mlb-player-lookup.onrender.com" src="https://plausible.io/js/script.js"></script>
+
 </head>
 <body>
   <main>
