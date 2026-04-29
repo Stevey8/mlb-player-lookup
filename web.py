@@ -544,7 +544,6 @@ INDEX_HTML = r"""<!doctype html>
         <h1>MLB Player Lookup</h1>
         <p class="subtitle">Search one box by MLBAM ID or player name. Shared names return every matching profile with photos and per-player details.</p>
       </div>
-      <div class="status-pill">Localhost tool</div>
     </header>
 
     <section class="search-panel" aria-label="Player search">
