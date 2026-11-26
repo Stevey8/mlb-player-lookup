@@ -26,6 +26,15 @@ ENV/
 # not part of the deployed app, keep it out of the image.
 player_lookup_full.py
 
+# Tests, dev-only deps, and CI config — not part of the runtime image.
+# (The Dockerfile's COPY is already explicit and would skip these anyway;
+# this just keeps them out of the build context sent to the daemon.)
+tests/
+conftest.py
+requirements-dev.txt
+.github/
+.pytest_cache/
+
 # Local data / OS cruft
 *.db
 *.sqlite

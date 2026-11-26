@@ -1,0 +1,4 @@
+# Dev/test-only dependencies. NOT installed into the Docker image (the
+# Dockerfile only installs requirements.txt), so the runtime image stays
+# free of test tooling.
+pytest==8.4.2

@@ -1,5 +1,7 @@
 # MLB Player Lookup
 
+[![CI](https://github.com/Stevey8/mlb-player-lookup/actions/workflows/ci.yml/badge.svg)](https://github.com/Stevey8/mlb-player-lookup/actions/workflows/ci.yml)
+
 A small MLB player lookup tool for finding player profiles by name or MLBAM
 ID. The repo includes a quick terminal script `lookup.py` and a lightweight local web
 interface `web.py`.  
@@ -128,3 +130,30 @@ runtime:
    `0.0.0.0` to that port.
 4. Deploy. Render builds the image from the Dockerfile on every push instead
    of running `pip install` against the repo directly.
+
+
+## Running Tests
+
+Tests are offline: `web._get_json` is mocked in every test, so nothing hits
+the real MLB Stats API.
+
+Install the dev-only dependencies (this is separate from `requirements.txt`
+on purpose — it's never installed into the Docker image):
+
+```bash
+pip install -r requirements-dev.txt
+```
+
+Run the suite:
+
+```bash
+pytest -v
+```
+
+This covers `search_players` (lookup by ID, lookup by name, a
+multiple-match name like "Max Muncy" that needs disambiguation, an empty
+query, and a name with no matches) plus a live-server test of the
+`/api/players` endpoint's JSON shape.
+
+A GitHub Actions workflow (`.github/workflows/ci.yml`) runs this same
+`pytest` suite and a `docker build` on every push and pull request.
