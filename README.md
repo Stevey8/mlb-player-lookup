@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/Stevey8/mlb-player-lookup/actions/workflows/ci.yml/badge.svg)](https://github.com/Stevey8/mlb-player-lookup/actions/workflows/ci.yml)
 
+**Live demo:** https://mlb-player-lookup.onrender.com
+
 A small MLB player lookup tool for finding player profiles by name or MLBAM
 ID. The repo includes a quick terminal script `lookup.py` and a lightweight local web
 interface `web.py`.  
@@ -57,23 +59,6 @@ http://127.0.0.1:8000
 ```
 
 
-
-
-### Instruction for Ngrok
-
-To share it with a friend using Ngrok, make sure you have your Ngrok account and authtoken ready. 
-```bash
-ngrok config add-authtoken AUTHTOKEN
-```
-
-You have to run the script on your local server first (follow the instruction above). Then in a second terminal: 
-
-```bash
-ngrok http 8000
-```
-
-The web will be running on `https://...ngrok-free.app` that ngrok prints.
-The link works while your local server and ngrok tunnel are both running.
 
 
 ## Running with Docker
