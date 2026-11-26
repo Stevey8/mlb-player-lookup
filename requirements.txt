@@ -1,0 +1,4 @@
+# No third-party dependencies: lookup.py and web.py use only the Python
+# standard library (urllib, http.server, argparse, etc.).
+# This file exists so the Dockerfile has a stable layer to cache against —
+# if real dependencies are added later, list them here.

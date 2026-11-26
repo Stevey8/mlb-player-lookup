@@ -72,3 +72,59 @@ ngrok http 8000
 
 The web will be running on `https://...ngrok-free.app` that ngrok prints.
 The link works while your local server and ngrok tunnel are both running.
+
+
+## Running with Docker
+
+The image runs the web interface by default and binds to the `PORT` env
+variable (defaults to `8000`).
+
+Build the image:
+
+```bash
+docker build -t mlb-player-lookup .
+```
+
+Run the web interface:
+
+```bash
+docker run --rm -p 8000:8000 mlb-player-lookup
+```
+
+Then open `http://localhost:8000` in your browser.
+
+To use a different port, set `PORT` and map the matching host port:
+
+```bash
+docker run --rm -e PORT=5050 -p 5050:5050 mlb-player-lookup
+```
+
+Run a one-off CLI lookup in the same image instead of the web server:
+
+```bash
+docker run --rm mlb-player-lookup python lookup.py --name "Shohei Ohtani"
+```
+
+Or run a CLI lookup against an already-running web container:
+
+```bash
+docker exec <container_name_or_id> python lookup.py --id 660271
+```
+
+
+## Deploying to Render
+
+This repo has no `render.yaml`, so the service is configured directly in the
+Render dashboard. To deploy with Docker instead of Render's native Python
+runtime:
+
+1. In the Render dashboard, open the service (or **New +** → **Web Service**
+   when creating one) and set **Runtime** to **Docker**.
+2. Leave **Dockerfile Path** as the default (`./Dockerfile`) — no build or
+   start command is needed; Render uses `CMD ["python", "web.py"]` from the
+   Dockerfile.
+3. Don't set a `PORT` environment variable yourself — Render injects its own
+   `PORT` value at runtime, and `web.py` already reads it and binds
+   `0.0.0.0` to that port.
+4. Deploy. Render builds the image from the Dockerfile on every push instead
+   of running `pip install` against the repo directly.

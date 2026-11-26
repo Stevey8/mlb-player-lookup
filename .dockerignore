@@ -1,0 +1,33 @@
+# Version control
+.git
+.gitignore
+
+# Python bytecode / caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment & secrets
+.env
+.env.*
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Reference-only file (gitignored, uses `requests` which isn't installed) —
+# not part of the deployed app, keep it out of the image.
+player_lookup_full.py
+
+# Local data / OS cruft
+*.db
+*.sqlite
+*.sqlite3
+.DS_Store
