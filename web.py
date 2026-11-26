@@ -537,7 +537,7 @@ INDEX_HTML = r"""<!doctype html>
     }
   </style>
 
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="5145afcd-128d-40c5-96ff-cff042ae7242"></script>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="16a6aa89-fec3-4506-9db5-0134845ec316"></script>
 
 </head>
 <body>
